@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": "342d",
+      "name": "Dark Nhân Tâm",
+      "category": "Books",
+      "price": 55,
+      "description": "Hay quá",
+      "stock": 10
+    },
+    {
+      "id": "c2e4",
+      "name": "Tủ Lạnh",
+      "category": "Electronics",
+      "price": 2000,
+      "description": "Đẹp",
+      "stock": 4
+    },
+    {
+      "id": "275b",
+      "name": "Bóng bầu dục",
+      "category": "Sports",
+      "price": 50,
+      "description": "Tốt",
+      "stock": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "2",
+      "name": "Nguyễn Van A",
+      "email": "vanaaa@example.com",
+      "role": "customer",
+      "createdAt": "2025-07-22T03:11:49.536Z"
+    },
+    {
+      "id": "3",
+      "name": "Trần Đình Hiếu",
+      "email": "hieumap2506@gmail.com",
+      "role": "admin",
+      "createdAt": "2025-07-21T03:07:10.648Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "2",
+      "userId": "3",
+      "productIds": [
+        "342d",
+        "c2e4"
+      ],
+      "status": "processing",
+      "totalPrice": 0,
+      "createdAt": "2025-07-18T09:30:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "productIds": [
+        "342d",
+        "275b"
+      ],
+      "status": "delivered",
+      "totalPrice": 0,
+      "createdAt": "2025-07-23T09:30:00.000Z"
+    }
+  ]
+}

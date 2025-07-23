@@ -5,13 +5,15 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 const cors = require('cors');
-server.use(cors({
-  origin: ['https://ecommerce-dashboard-seven-phi.vercel.app'], // Cho phép mọi domain, có thể custom nếu cần
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  exposedHeaders: ['Content-Range', 'X-Total-Count'],
-  credentials: true,
-})); // Cho phép mọi domain, có thể custom nếu cần
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+server.use(middlewares);
+server.use(router);
+  // Cho phép mọi domain, có thể custom nếu cần
 
 server.use(middlewares)
 server.use(router)
